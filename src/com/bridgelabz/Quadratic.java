@@ -25,16 +25,21 @@ public class Quadratic {
      */
     public static void quadratic(int a,int b,int c)
     {
+        double root1 = 0;
+        double root2 = 0;
         int delta=b*b - 4*a*c;
         if(delta>=0)
         {
-            double root1=(-b +Math.sqrt(delta))/(2*a);
-            double root2=(-b -Math.sqrt(delta))/(2*a);
+             root1=(-b +Math.sqrt(delta))/(2*a);
+             root2=(-b -Math.sqrt(delta))/(2*a);
             System.out.println("roots are"+root1+","+root2);
         }
-        else
+        else if(delta<=0)
         {
-            System.out.println("roots are imaginary because delta is less than zero");
+            System.out.println("roots are imaginary because delta is less than zero:"+root1+" "+root2);
+            root1=(-b +Math.sqrt(delta))/(2*a);
+            root2=(-b -Math.sqrt(delta))/(2*a);
+            System.out.println("roots are"+root1+","+root2);
         }
     }
 }
